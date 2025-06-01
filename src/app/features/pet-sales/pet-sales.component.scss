@@ -1,0 +1,26 @@
+.daily-title {
+  font-size: 14px;
+  margin-block: 2rem;
+}
+
+table {
+  margin-top: 1rem;
+  th {
+    background-color: #eeeeee;
+    color: var(--primary-color);
+    font-weight: 590;
+    font-size: 1rem;
+    text-align: center;
+  }
+  tr {
+    font-size: 1rem;
+  }
+  tr:nth-child(even) {
+    background-color: #eeeeee;
+  }
+  td {
+    text-align: center;
+    height: 4rem;
+    max-width: 4.1rem;
+  }
+}

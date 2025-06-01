@@ -1,0 +1,24 @@
+<form [formGroup]="filterForm" class="filter-form">
+  <mat-form-field appearance="outline" class="filter-form_name">
+    <mat-label>Search Name</mat-label>
+    <input matInput formControlName="searchName" placeholder="Enter name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-form_field">
+    <mat-label>Sort By</mat-label>
+    <mat-select formControlName="sortBy">
+      <mat-option *ngFor="let option of sortOptions" [value]="option.value">
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="filter-form_field">
+    <mat-label>Order</mat-label>
+    <mat-select formControlName="orderBy">
+      <mat-option *ngFor="let option of orderOptions" [value]="option">
+        {{ option }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

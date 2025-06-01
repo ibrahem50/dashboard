@@ -1,0 +1,32 @@
+<header class="header">
+  <h1 class="header-title">Dashboard</h1>
+  <nav class="header_items">
+    <div>
+      <a class="header_items-link" routerLink="/users" routerLinkActive="active"
+        >Users</a
+      >
+      <a
+        class="header_items-link"
+        routerLink="/attractions"
+        routerLinkActive="active"
+        >Attractions</a
+      >
+      <a
+        class="header_items-link"
+        routerLink="/pet-sales"
+        routerLinkActive="active"
+        >Pet Sales</a
+      >
+    </div>
+
+    <div>
+      @if (isLoggedIn$ | async; as loggedIn) {
+      <button class="header_items-logout-btn" (click)="logout()">Logout</button>
+      } @else {
+      <a class="header_items-link" routerLink="/login" routerLinkActive="active"
+        >Login</a
+      >
+      }
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,39 @@
+<section class="form">
+  <h2>{{ isEditMode ? "Edit User" : "Create User" }}</h2>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="fname" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="lname" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" type="password" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Avatar URL</mat-label>
+      <input matInput formControlName="avatar" />
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" (submit)="onSubmit()">
+      {{ isEditMode ? "Update" : "Create" }}
+    </button>
+  </form>
+</section>

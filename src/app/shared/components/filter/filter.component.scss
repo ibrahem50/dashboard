@@ -1,0 +1,11 @@
+.filter-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  &_name {
+    flex: 2;
+  }
+  &_field {
+    flex: 1;
+  }
+}

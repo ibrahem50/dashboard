@@ -1,0 +1,56 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  &-hint {
+    background-color: #f0f4ff;
+    border-left: 4px solid #4285f4;
+    padding: 10px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #333;
+    code {
+      background: #eaeaea;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-family: monospace;
+    }
+  }
+  &__container {
+    padding: 4rem;
+    background-color: #f0f0f0;
+    border-radius: 2rem;
+    box-shadow: var(--primary-shadow);
+    justify-items: center;
+    &--title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    &__inputs {
+      display: flex;
+      flex-direction: column;
+      &--input {
+        margin-block: 0.5rem;
+        border-radius: 1rem;
+        border: 1px solid black;
+        height: 2.5rem;
+        width: 14rem;
+        padding-inline: 0.6rem;
+      }
+      &--input.ng-invalid.ng-touched {
+        border: 0.1rem solid red !important;
+      }
+    }
+    &__button {
+      display: flex;
+      margin-top: 1rem;
+      justify-content: center;
+    }
+    &--error {
+      text-align: center;
+      color: red;
+    }
+  }
+}

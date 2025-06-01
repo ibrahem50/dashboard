@@ -1,0 +1,69 @@
+@if (chartOptions) {
+<div class="chart-container">
+  <h1 class="daily-title">Weekly Pet Sales</h1>
+
+  <div class="category-selector">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Date</mat-label>
+      <input
+        matInput
+        [matDatepicker]="picker"
+        (dateChange)="onWeeklySelected($event.value)"
+        [max]="today"
+        [value]="today"
+      />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <apx-chart
+    [series]="weeklySeries"
+    [chart]="chartOptions.chart"
+    [xaxis]="chartOptions.xaxis"
+    [title]="chartOptions.title"
+  >
+  </apx-chart>
+</div>
+} @if (categories.length>0) {
+
+<h1 class="daily-title">Daily Sales Details</h1>
+
+<div class="category-selector">
+  <mat-form-field appearance="fill">
+    <mat-label>Select Date</mat-label>
+    <input
+      matInput
+      [matDatepicker]="picker"
+      (dateChange)="onDailySelected($event.value)"
+      [max]="today"
+      [value]="today"
+    />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+</div>
+
+@if (dailySales.length > 0) {
+<div class="daily-table">
+  <table mat-table [dataSource]="dailySales" matSort>
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+      <td mat-cell *matCellDef="let element">{{ element.date }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="animal">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Animal</th>
+      <td mat-cell *matCellDef="let element">{{ element.animal }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+      <td mat-cell *matCellDef="let element">{{ element.price | currency }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+</div>
+} }

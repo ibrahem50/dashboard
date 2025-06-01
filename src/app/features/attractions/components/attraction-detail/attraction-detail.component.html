@@ -1,0 +1,34 @@
+<section class="form">
+  <h2>{{ isEditMode ? "Edit Attration" : "Create Attration" }}</h2>
+
+  <form [formGroup]="attractionForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Detail</mat-label>
+      <input matInput formControlName="detail" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Cover Image</mat-label>
+      <input matInput formControlName="coverimage" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>latitude</mat-label>
+      <input matInput formControlName="latitude" type="number" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>longitude</mat-label>
+      <input matInput formControlName="longitude" type="number" />
+    </mat-form-field>
+
+    <button mat-flat-button color="primary" type="submit" (submit)="onSubmit()">
+      {{ isEditMode ? "Update" : "Create" }}
+    </button>
+  </form>
+</section>

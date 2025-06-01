@@ -1,0 +1,28 @@
+.dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  &__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    &--btn {
+      cursor: pointer;
+      border-color: #000000;
+      border-radius: 15px;
+      padding: 3rem;
+      padding-block: 0.5rem;
+      color: #000000;
+    }
+    &--danger-btn {
+      background-color: var(--danger-color);
+      color: #ffffff;
+    }
+    &--success-btn {
+      background-color: transparent;
+    }
+  }
+}

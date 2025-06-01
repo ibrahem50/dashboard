@@ -1,0 +1,85 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: auto !important;
+  height: fit-content;
+}
+
+body {
+  margin: 0;
+  font-family: "Cabin", "IBM Plex Sans Arabic", sans-serif;
+}
+html {
+  font-size: 100%;
+
+  @media screen and (min-width: 4096px) {
+    font-size: 72.5%;
+  }
+
+  @media screen and (min-width: 2560px) {
+    font-size: 74.5%;
+  }
+
+  @media screen and (max-width: 640px) {
+    font-size: 50%;
+  }
+}
+
+:root {
+  --primary-color: #2e3339;
+  --primary-shadow: 1px 5px 5px #4c4c4c29;
+  --danger-color: #ff4d4d;
+}
+
+.snackbar-error .mat-mdc-snackbar-surface {
+  background-color: var(--danger-color) !important;
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.snackbar-success .mat-mdc-snackbar-surface {
+  background-color: #4caf50 !important;
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+.general-btn {
+  height: 2.5rem;
+  width: 8rem;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.edit-btn,
+.add-btn {
+  background-color: var(--primary-color);
+}
+
+.delete-btn {
+  background-color: var(--danger-color);
+}
+
+h1 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.mat-mdc-form-field {
+  width: 100%;
+}
+
+.mat-column-detail {
+  white-space: nowrap;
+}

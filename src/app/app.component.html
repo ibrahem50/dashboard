@@ -1,0 +1,9 @@
+@if (loading$ | async) {
+<div class="loading-spinner">
+  <app-loading />
+</div>
+}
+<app-header />
+<div class="container">
+  <router-outlet />
+</div>

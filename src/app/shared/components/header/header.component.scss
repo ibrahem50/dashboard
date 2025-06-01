@@ -1,0 +1,28 @@
+.header {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: 1rem 2rem;
+  background-color: var(--primary-color);
+  color: #ffff;
+  &_items {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    &-link {
+      color: #ffff;
+      margin-inline-end: 2rem;
+      &.active {
+        color: #4fc3f7;
+        font-weight: bold;
+      }
+    }
+    &-logout-btn {
+      border: none;
+      background-color: transparent;
+      color: #ffff;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  }
+}

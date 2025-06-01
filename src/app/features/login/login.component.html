@@ -1,0 +1,35 @@
+<form class="login" [formGroup]="loginForm" (ngSubmit)="loginSubmit()">
+  <section class="login__container">
+    <h1 class="login__container--title">Sign in</h1>
+    <div class="login-hint">
+      <p><strong>Test Credentials:</strong></p>
+      <p>Username: <code>karn.yong&#64;melivecode.com</code></p>
+      <p>Password: <code>melivecode</code></p>
+    </div>
+    <section class="login__container__inputs">
+      <input
+        formControlName="userName"
+        class="login__container__inputs--input"
+        placeholder="User name"
+        type="text"
+      />
+      <input
+        formControlName="password"
+        class="login__container__inputs--input"
+        placeholder="Password"
+        type="password"
+      />
+    </section>
+    @if (errorMessage) {
+    <p class="login__container--error">user name or password is wrong</p>
+    }
+    <section class="login__container__button">
+      <button
+        type="submit"
+        class="login__container__button--btn general-btn add-btn"
+      >
+        Submit
+      </button>
+    </section>
+  </section>
+</form>

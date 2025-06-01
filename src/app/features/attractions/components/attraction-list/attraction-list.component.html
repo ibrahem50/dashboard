@@ -1,0 +1,64 @@
+<section class="attraction-list">
+  <div class="attraction-list__button">
+    <button class="general-btn add-btn" (click)="add()">Add Attraction</button>
+  </div>
+
+  <app-filter
+    [sortOptions]="sortOptions"
+    (filterChanged)="onFilterChanged($event)"
+  ></app-filter>
+
+  <div class="attraction-list__cards">
+    @if (attractions$ | async; as attractions) { @if (attractions.data.length >
+    0) {
+    <div class="attraction-list__grid">
+      @for (attraction of attractions.data; track attraction.id) {
+      <mat-card
+        class="attraction-list__card"
+        [ngStyle]="{
+          'background-image':
+            'url(' +
+            (attraction.coverimage || 'assets/icons/default-avatar.png') +
+            ')'
+        }"
+      >
+        <div class="attraction-list__overlay">
+          <mat-card-header>
+            <mat-card-title>{{ attraction.name }}</mat-card-title>
+          </mat-card-header>
+
+          <mat-card-content>
+            <p
+              class="attraction-list__content"
+              matTooltip="{{ attraction.detail }}"
+              matTooltipShowDelay="300"
+              matTooltipPosition="above"
+            >
+              {{ attraction.detail }}
+            </p>
+          </mat-card-content>
+
+          <mat-card-actions class="attraction-list__actions">
+            <button class="general-btn edit-btn" (click)="edit(attraction)">
+              Edit
+            </button>
+            <button class="general-btn delete-btn" (click)="delete(attraction)">
+              Delete
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-card>
+      }
+    </div>
+
+    <mat-paginator
+      [length]="attractions.total"
+      [pageSize]="attractions.per_page"
+      [pageSizeOptions]="[5, 10, 25, 100]"
+      (page)="pageChanged($event)"
+    ></mat-paginator>
+    } @else {
+    <p>😕 No attractions found</p>
+    } }
+  </div>
+</section>
