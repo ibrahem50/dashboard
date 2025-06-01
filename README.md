@@ -67,9 +67,53 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ## Testing
 
-### Running unit tests
+The project includes comprehensive unit tests for critical components and services. Tests are written using Jasmine and run with Karma test runner.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Running Tests
+
+```bash
+# Run all unit tests
+ng test
+
+# Run tests with coverage report
+ng test --code-coverage
+```
+
+### Test Coverage
+
+The project includes tests for the following critical components:
+
+#### 1. Authentication Service (`auth.service.spec.ts`)
+- Authentication state management
+- Token handling (storage, retrieval, expiry)
+- Login/logout functionality
+- Auto-logout mechanism
+- Token validation
+
+#### 2. Attraction List Component (`attraction-list.component.spec.ts`)
+- Component initialization
+- Data loading and display
+- Pagination functionality
+- Filtering and sorting
+- Navigation (add/edit)
+- Deletion with confirmation dialog
+- Error handling
+
+#### 3. Attraction Service (`attraction.service.spec.ts`)
+- CRUD operations
+- Query parameter handling
+- API endpoint integration
+- Response mapping
+- Error scenarios
+
+### Testing Best Practices
+- Test isolation using `beforeEach` and `afterEach`
+- Mocked external dependencies
+- Type-safe interfaces
+- Coverage of edge cases
+- Error state handling
+- Asynchronous operation testing
+- Component interaction testing
 
 ### Running end-to-end tests
 
@@ -90,6 +134,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 - Type safety with TypeScript
 - Modular SCSS structure
 - Lazy loading for better performance
+- Comprehensive test coverage
 
 ## Further help
 
